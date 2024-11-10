@@ -11,7 +11,7 @@ st.markdown("This app predicts the **Iris flower** type")
    
 user_input = st.selectbox("How would you like to use the prediction model?", ['Input parameters directly','Load a file of data'], index= None, placeholder="Select an input method...")
 
-model = pickle.load(open('app build/modeliris6.pkl','rb'))
+model = pickle.load(open('modeliris6.pkl','rb'))
 
 if user_input == 'Input parameters directly':
     with st.sidebar :
