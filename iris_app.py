@@ -39,4 +39,8 @@ if user_input == 'Input parameters directly':
     st.header("Prediction Probability")
 
 elif user_input == 'Load a file of data':
-    st.file_uploader('Upload a data file')
+    file = st.file_uploader('Upload a data file')
+    if file is not None:
+        data = pd.read_csv(file,header=None)
+        prediction = model.predict(data)
+        st.write(prediction)
