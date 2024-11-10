@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcnEoopczYX_eLHV5kWIGUiiow7pKpxLW-bQ&s')
+st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcnEoopczYX_eLHV5kWIGUiiow7pKpxLW-bQ&s', use_column_width=True)
 
 st.title("MSDE6: ML Course")
 st.header("Iris Flower Prediction App")
