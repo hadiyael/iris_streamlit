@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcnEoopczYX_eLHV5kWIGUiiow7pKpxLW-bQ&s', use_column_width=True)
+st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcnEoopczYX_eLHV5kWIGUiiow7pKpxLW-bQ&s', use_container_width=True)
 
 st.title("MSDE6: ML Course")
 st.header("Iris Flower Prediction App")
@@ -31,16 +31,25 @@ if user_input == 'Input parameters directly':
     })
     st.write(data)
     
-    st.header("Class labels and their corresponding index number")
+    # st.header("Class labels and their corresponding index number")
     
     st.header("Prediction")
     prediction = model.predict(data)
+    prediction_proba = model.predict_proba(data)
     st.write(prediction)
     st.header("Prediction Probability")
+    st.write(prediction_proba)
 
 elif user_input == 'Load a file of data':
     file = st.file_uploader('Upload a data file')
     if file is not None:
         data = pd.read_csv(file,header=None)
+        st.header("User Input Parameters:")
+        st.write(data)
+        
         prediction = model.predict(data)
+        prediction_proba = model.predict_proba(data)
+        st.header("Prediction")
         st.write(prediction)
+        st.header("Prediction Probability")
+        st.write(prediction_proba)
